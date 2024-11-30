@@ -3,6 +3,8 @@
 , cmake
 , fetchFromGitHub
 , git
+, cadical
+, libuv
 , gmp
 , perl
 , testers
@@ -10,7 +12,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "lean4";
-  version = "4.10.0";
+  version = "4.13.0";
 
   src = fetchFromGitHub {
     owner = "leanprover";
@@ -34,6 +36,8 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     cmake
+    cadical
+    libuv
   ];
 
   buildInputs = [
